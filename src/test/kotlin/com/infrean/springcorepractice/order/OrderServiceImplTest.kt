@@ -1,5 +1,6 @@
 package com.infrean.springcorepractice.order
 
+import com.infrean.springcorepractice.AppConfig
 import com.infrean.springcorepractice.member.Grade
 import com.infrean.springcorepractice.member.Member
 import com.infrean.springcorepractice.member.MemberServiceImpl
@@ -8,8 +9,8 @@ import org.junit.jupiter.api.Test
 
 class OrderServiceImplTest{
 
-    private val memberService = MemberServiceImpl()
-    private val orderService = OrderServiceImpl()
+    private val memberService = AppConfig().memberService()
+    private val orderService = AppConfig().orderService()
 
     @Test
     fun createOrder(){

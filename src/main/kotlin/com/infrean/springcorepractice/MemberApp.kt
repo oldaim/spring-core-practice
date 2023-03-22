@@ -2,12 +2,12 @@ package com.infrean.springcorepractice
 
 import com.infrean.springcorepractice.member.Grade
 import com.infrean.springcorepractice.member.Member
-import com.infrean.springcorepractice.member.MemberServiceImpl
 
 class MemberApp {
 
     fun main(args: Array<String>){
-        val memberService = MemberServiceImpl()
+        val appConfig = AppConfig()
+        val memberService = appConfig.memberService()
         val member = Member(1L, "kim", Grade.BASIC)
 
         memberService.join(member)

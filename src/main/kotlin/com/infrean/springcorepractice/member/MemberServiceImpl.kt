@@ -1,9 +1,8 @@
 package com.infrean.springcorepractice.member
 
-class MemberServiceImpl(): MemberService{
-
-    private val memberRepository: MemberRepository = MemoryMemberRepository()
-
+class MemberServiceImpl(
+    private val memberRepository: MemberRepository
+): MemberService{
     override fun join(member: Member) {
         memberRepository.save(member)
     }
