@@ -4,17 +4,16 @@ import com.infrean.springcorepractice.member.Grade
 import com.infrean.springcorepractice.member.Member
 import com.infrean.springcorepractice.member.MemberServiceImpl
 import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 class OrderServiceImplTest{
 
     private val memberService = MemberServiceImpl()
-    private val orderService = OrderServiceImpl(memberService)
+    private val orderService = OrderServiceImpl()
 
     @Test
     fun createOrder(){
-        val memberId: Long = 1L
+        val memberId = 1L
         val member = Member(memberId, "memberA", Grade.VIP)
 
         memberService.join(member)

@@ -1,14 +1,11 @@
 package com.infrean.springcorepractice.order
 
 import com.infrean.springcorepractice.discount.FixDiscountPolicy
-import com.infrean.springcorepractice.member.MemberService
-import com.infrean.springcorepractice.member.MemoryMemberRepository
+import com.infrean.springcorepractice.member.MemberServiceImpl
 
-class OrderServiceImpl(
-    var memberService: MemberService
-) : OrderService {
+class OrderServiceImpl : OrderService {
 
-
+    private val memberService = MemberServiceImpl()
     private val discountPolicy = FixDiscountPolicy()
 
     override fun createOrder(memberId: Long, itemName: String, itemPrice: Int): Order {
