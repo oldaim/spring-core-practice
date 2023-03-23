@@ -1,12 +1,13 @@
 package com.infrean.springcorepractice.member
 
 
+import com.infrean.springcorepractice.AppConfig
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 
  class MemberServiceImplTest {
 
-     val memberService = MemberServiceImpl()
+     private val memberService = AppConfig().memberService()
 
      @Test
      fun joinTest() {
