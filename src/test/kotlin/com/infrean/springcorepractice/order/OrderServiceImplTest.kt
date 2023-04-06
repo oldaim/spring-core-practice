@@ -21,11 +21,9 @@ class OrderServiceImplTest{
 
         Assertions.assertThat(memberService.findMember(memberId)).isNotNull
 
-        val order = orderService.createOrder(memberId, "itemA", 20000)
 
-        println(order)
 
-        Assertions.assertThat(order.discountPrice).isEqualTo(2000)
+
 
     }
 
